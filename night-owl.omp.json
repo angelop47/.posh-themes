@@ -92,12 +92,13 @@
           "trailing_diamond": "\ue0d6",
           "type": "shell"
         },
+
         {
-          "background": "#8f43f3",
+          "background": "#337bb6", // Ram
           "foreground": "#ffffff",
           "leading_diamond": "\ue0b2",
           "style": "diamond",
-          "template": "\ue266 {{ round .PhysicalPercentUsed .Precision }}% ",
+          "template": "\ue266 {{ round .PhysicalPercentUsed .Precision }}% | {{ (div ((sub .PhysicalTotalMemory .PhysicalAvailableMemory)|float64) 1073741824.0) }}/{{ (div .PhysicalTotalMemory 1073741824.0) }}GB ",
           "trailing_diamond": "\ue0d6",
           "type": "sysinfo"
         },
